@@ -25,8 +25,11 @@ For example,(‘Nombre’,’Ernesto’ ) is one of the (Identifier,word) tuple.
 We use regex expressions to find the words of the form word1:word2 from the training/validation files. For each such tuples found, we see if the word1 is a key from the precomputed Dictionary D1. If it is a key from the Dictionary D1, we label the word2 with the tag corresponding to the word1 from Dictionary D1.  This simple baseline does not involve any machine learning. It relies on  two things 1. Finding the : separated words from the running text 2. Assigning the tag to the words using the precomputed Dictionary D1.
 
 Training Dataset Evaluation:
+		Metric:
 
 		Training Score:
 	
 		Validation Score:
+		
+		Test Score:
 
