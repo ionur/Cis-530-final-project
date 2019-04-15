@@ -12,7 +12,7 @@ Step 2 - Parse the text from the training data from all the files to identify th
 Example:
 
 	Precomputed dictionary D looks something like:
-	{ {Ernesto,’NOMBRE_SUJETO_ASISTENCIA’} , ……...}
+	{ 'Nombre': 'NOMBRE_SUJETO_ASISTENCIA', ……...}
 
 	After reading all the files second time, We get, L = [ (‘Nombre’,’Ernesto’ ),....] (‘Nombre’,’Ernesto’ ) is one of the (Identifier,word) tuple from the List L.
 
