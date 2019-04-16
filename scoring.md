@@ -24,3 +24,10 @@ For more detailed information on evaluation, please refer to the following link:
 https://github.com/PlanTL-SANIDAD/MEDDOCAN-Evaluation-Script
 
 
+__How to run evaluation script:__
+
+```
+python evaluate.py brat ner <Gold Annotations Folder> <Predicted Annotations Folder>
+
+python evaluate.py brat ner ./train/gold ./train/system
+```
