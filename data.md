@@ -36,7 +36,8 @@ __Description:__
 which is any information in the medical record that can be used to identify an individual, and that was created, used, 
 or disclosed in the course of providing a health care service, such as a diagnosis or treatment. In other words, PHI is 
 personally identifiable information in medical records, including conversations between doctors and nurses about treatment. 
-PHI also includes billing information and any patient-identifiable information in a health insurance company's computer system.```
+PHI also includes billing information and any patient-identifiable information in a health insurance company's computer system.
+```
 
 Some information that can be considered PHI
 ❏ Names
@@ -81,7 +82,7 @@ More detailed information for annotation guidelines can be found here: http://te
 
 __File format of the data:__
 
-*The MEDDOCAN corpus is distributed in plain text in UTF8 encoding, where each clinical case is stored as a single file, while PHI annotations are released in the popular BRAT format, which makes visualization of results straightforward.*
+The MEDDOCAN corpus is distributed in plain text in UTF8 encoding, where each clinical case is stored as a single file, while PHI annotations are released in the popular BRAT format, which makes visualization of results straightforward.
 
 __Dataset__
 
