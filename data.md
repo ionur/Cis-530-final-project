@@ -46,7 +46,7 @@ Some information that can be considered PHI
 ❏ Different types of locations (provinces, cities, towns,…)
 ❏ Billing information
 ❏ Email
-❏ Phone records`
+❏ Phone records
 
 
 __Training File1 Gold Annotations:__ S0004-06142005000500011-1.ann
@@ -75,7 +75,7 @@ T19	ID_SUJETO_ASISTENCIA 68 74	368503
 T20	NOMBRE_SUJETO_ASISTENCIA 49 61	Rivera Bueno
 T21	NOMBRE_SUJETO_ASISTENCIA 29 36	Ernesto`
 
-More information for annotation guidelines can be found here: http://temu.bsc.es/meddocan/index.php/annotation-guidelines/
+More detailed information for annotation guidelines can be found here: http://temu.bsc.es/meddocan/index.php/annotation-guidelines/
 
 __File format of the data:__
 
@@ -99,4 +99,10 @@ New data distribution:
 2. Development:  clinical cases
 3. Testing:  clinical cases
 
+__Source of Dataset:__
+Dataset has been taken from MEDDOCAN (Medical Document Anonymization Task page: http://temu.bsc.es/meddocan/).
+
+A synthetic corpus of clinical cases enriched with PHI expressions was prepared, named the MEDDOCAN corpus. This MEDDOCAN corpus of 1,000 clinical case studies was selected manually by a practicing physician and augmented with PHI phrases by health documentalists, adding PHI information from discharge summaries and medical genetics clinical records.
+
+More detailed information can be found here: http://temu.bsc.es/meddocan/index.php/description-of-the-corpus/
 
