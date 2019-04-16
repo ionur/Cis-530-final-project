@@ -12,9 +12,11 @@ sensitive phrases are detected correctly. This boils down to a classification of
 systems try to obfuscate spans that contain sensitive PHI expressions.
 
 For both sub-tasks, the metric used will be micro-averaged precision, recall, and balanced F-score:
-● Precision (P) = true positives/(true positives + false positives)
-● Recall (R) = true positives/(true positives + false negatives)
-● F-score (F1) = 2*((P*R)/(P+R))
+1. Precision (P) = true positives/(true positives + false positives)
+2. Recall (R) = true positives/(true positives + false negatives)
+3. F-score (F1) = 2*((P*R)/(P+R))
+
+Higher F-scores are better for the above tasks.
 
 Task 2 is a subsequent task after NER (Task 1). Task 2 can be taken up only after successful completion of Task 1.
 
