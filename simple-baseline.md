@@ -28,7 +28,8 @@ We use regex expressions to find the words of the form word1:word2 from the trai
 __Evaluation metrics for our dataset:__
 
 For Training Set:
-                                                                      
+  
+```
 Report (SYSTEM: system):
 ------------------------------------------------------------
 SubTrack 1 [NER]                   Measure        Micro               
@@ -37,9 +38,11 @@ Total (401 docs)                   Precision      0.634
                                    Recall         0.4382              
                                    F1             0.5182              
 ------------------------------------------------------------
+```
 
 For Development Set:
 
+```
 Report (SYSTEM: system):
 ------------------------------------------------------------
 SubTrack 1 [NER]                   Measure        Micro               
@@ -48,9 +51,11 @@ Total (193 docs)                   Precision      0.6292
                                    Recall         0.4254              
                                    F1             0.5076              
 ------------------------------------------------------------
+```
 
 For Test Set:
 
+```
 Report (SYSTEM: system):
 ------------------------------------------------------------
 SubTrack 1 [NER]                   Measure        Micro               
@@ -59,3 +64,4 @@ Total (156 docs)                   Precision      0.628
                                    Recall         0.4238              
                                    F1             0.5061              
 ------------------------------------------------------------
+```
