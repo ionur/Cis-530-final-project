@@ -33,31 +33,30 @@ Remitido por: Ignacio Navarro Cuéllar c/ del Abedul 5-7, 2º dcha 28036 Madrid,
 
 __Description:__
 
-```
 The training file consists of plain text representing a clinical case study. It has Protected Health Information (PHI) 
 which is any information in the medical record that can be used to identify an individual, and that was created, used, 
 or disclosed in the course of providing a health care service, such as a diagnosis or treatment. In other words, PHI is 
 personally identifiable information in medical records, including conversations between doctors and nurses about treatment. 
 PHI also includes billing information and any patient-identifiable information in a health insurance company's computer system.
-```
 
 Some information that can be considered PHI
-❏ Names
-❏ Surnames
-❏ Addresses
-❏ Hospitals
-❏ Professions
-❏ Different types of locations (provinces, cities, towns,…)
-❏ Billing information
-❏ Email
-❏ Phone records
+1. Names
+2. Surnames
+3. Addresses
+4. Hospitals
+5. Professions
+6. Different types of locations (provinces, cities, towns,…)
+7. Billing information
+8. Email
+9. Phone records
 
 
 __Training File1 Gold Annotations:__ S0004-06142005000500011-1.ann
 
 The following text shows an example of an annotation in the BRAT format.
 
-```T1	FECHAS 215 225	03/03/1946
+```
+T1	FECHAS 215 225	03/03/1946
 T2	CORREO_ELECTRONICO 2421 2439	nnavcu@hotmail.com
 T3	PAIS 2406 2412	España
 T4	TERRITORIO 2398 2404	Madrid
