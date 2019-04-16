@@ -3,7 +3,8 @@ __Example of the data:__
 
 __Training File1:__ S0004-06142005000500011-1.txt
 
-```Datos del paciente.
+```
+Datos del paciente.
 Nombre:  Ernesto.
 Apellidos: Rivera Bueno.
 NHC: 368503.
@@ -32,7 +33,8 @@ Remitido por: Ignacio Navarro Cuéllar c/ del Abedul 5-7, 2º dcha 28036 Madrid,
 
 __Description:__
 
-```The training file consists of plain text representing a clinical case study. It has Protected Health Information (PHI) 
+```
+The training file consists of plain text representing a clinical case study. It has Protected Health Information (PHI) 
 which is any information in the medical record that can be used to identify an individual, and that was created, used, 
 or disclosed in the course of providing a health care service, such as a diagnosis or treatment. In other words, PHI is 
 personally identifiable information in medical records, including conversations between doctors and nurses about treatment. 
@@ -103,6 +105,7 @@ New data distribution:
 3. Testing: 156 clinical cases
 
 __Source of Dataset:__
+
 Dataset has been taken from MEDDOCAN (Medical Document Anonymization Task page: http://temu.bsc.es/meddocan/).
 
 A synthetic corpus of clinical cases enriched with PHI expressions was prepared, named the MEDDOCAN corpus. This MEDDOCAN corpus of 1,000 clinical case studies was selected manually by a practicing physician and augmented with PHI phrases by health documentalists, adding PHI information from discharge summaries and medical genetics clinical records.
