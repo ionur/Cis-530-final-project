@@ -3,7 +3,7 @@ __Example of the data:__
 
 __Training File1:__ S0004-06142005000500011-1.txt
 
-`Datos del paciente.
+```Datos del paciente.
 Nombre:  Ernesto.
 Apellidos: Rivera Bueno.
 NHC: 368503.
@@ -27,7 +27,8 @@ En la placa simple de abdomen se valoran cambios degenerativos en columna lumbar
 La ecografía urológica pone de manifiesto la existencia de quistes corticales simples en riñón derecho, vejiga sin alteraciones con buena capacidad y próstata con un peso de 30 g.
 En la UIV se observa normofuncionalismo renal bilateral, calcificaciones sobre silueta renal derecha y uréteres arrosariados con imágenes de adición en el tercio superior de ambos uréteres, en relación a pseudodiverticulosis ureteral. El cistograma demuestra una vejiga con buena capacidad, pero paredes trabeculadas en relación a vejiga de esfuerzo. La TC abdominal es normal.
 La cistoscopia descubre la existencia de pequeñas tumoraciones vesicales, realizándose resección transuretral con el resultado anatomopatológico de carcinoma urotelial superficial de vejiga.
-Remitido por: Ignacio Navarro Cuéllar c/ del Abedul 5-7, 2º dcha 28036 Madrid, España E-mail: nnavcu@hotmail.com.`
+Remitido por: Ignacio Navarro Cuéllar c/ del Abedul 5-7, 2º dcha 28036 Madrid, España E-mail: nnavcu@hotmail.com.
+```
 
 __Description:__
 
