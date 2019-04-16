@@ -92,12 +92,12 @@ The data is provided in Brat and XML formats. For the purpose of this project, w
 April 29)
 
 Since the actual test data will be made available on April 29, for building our model and evaluation we have
-put 99 clinical files aside each from the training data and ________ clinical files from the development data.
+put 99 clinical files aside each from the training data and 57 clinical files from the development data.
 
 New data distribution:
 1. Training: 401 clinical cases
-2. Development:  clinical cases
-3. Testing:  clinical cases
+2. Development: 193 clinical cases
+3. Testing: 156 clinical cases
 
 __Source of Dataset:__
 Dataset has been taken from MEDDOCAN (Medical Document Anonymization Task page: http://temu.bsc.es/meddocan/).
