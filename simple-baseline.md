@@ -3,7 +3,9 @@ __Pre-Processing the Data:__
 
 __Step 1 - Parse all the labels in the training data from all the files to identify (word,tag) tuples:__
 
-	Our dataset is in Spanish language. We use the labelled data of the training set to identify the (word,tag) tuples. For example, if one of the labels in the training set contains (Ernesto, ’NOMBRE_SUJETO_ASISTENCIA’) as one of the gold standard label for a file, we add (Ernesto,’NOMBRE_SUJETO_ASISTENCIA’) to the dictionary D. We populate the dictionary D using the approach mentioned above for all the files. 
+```
+Our dataset is in Spanish language. We use the labelled data of the training set to identify the (word,tag) tuples. For example, if one of the labels in the training set contains (Ernesto, ’NOMBRE_SUJETO_ASISTENCIA’) as one of the gold standard label for a file, we add (Ernesto,’NOMBRE_SUJETO_ASISTENCIA’) to the dictionary D. We populate the dictionary D using the approach mentioned above for all the files.
+```
 
 __Step 2 - Parse the text from the training data from all the files to identify the list L of (identifier,word) tuples:__
 
