@@ -32,11 +32,11 @@ Remitido por: Ignacio Navarro Cuéllar c/ del Abedul 5-7, 2º dcha 28036 Madrid,
 
 __Description:__
 
-`The training file consists of plain text representing a clinical case study. It has Protected Health Information (PHI) 
+```The training file consists of plain text representing a clinical case study. It has Protected Health Information (PHI) 
 which is any information in the medical record that can be used to identify an individual, and that was created, used, 
 or disclosed in the course of providing a health care service, such as a diagnosis or treatment. In other words, PHI is 
 personally identifiable information in medical records, including conversations between doctors and nurses about treatment. 
-PHI also includes billing information and any patient-identifiable information in a health insurance company's computer system.`
+PHI also includes billing information and any patient-identifiable information in a health insurance company's computer system.```
 
 Some information that can be considered PHI
 ❏ Names
@@ -54,7 +54,7 @@ __Training File1 Gold Annotations:__ S0004-06142005000500011-1.ann
 
 The following text shows an example of an annotation in the BRAT format.
 
-`T1	FECHAS 215 225	03/03/1946
+```T1	FECHAS 215 225	03/03/1946
 T2	CORREO_ELECTRONICO 2421 2439	nnavcu@hotmail.com
 T3	PAIS 2406 2412	España
 T4	TERRITORIO 2398 2404	Madrid
@@ -74,22 +74,23 @@ T17	CALLE 107 130	Calle Miguel Benitez 90
 T18	ID_ASEGURAMIENTO 82 93	26 63514095
 T19	ID_SUJETO_ASISTENCIA 68 74	368503
 T20	NOMBRE_SUJETO_ASISTENCIA 49 61	Rivera Bueno
-T21	NOMBRE_SUJETO_ASISTENCIA 29 36	Ernesto`
+T21	NOMBRE_SUJETO_ASISTENCIA 29 36	Ernesto
+```
 
 More detailed information for annotation guidelines can be found here: http://temu.bsc.es/meddocan/index.php/annotation-guidelines/
 
 __File format of the data:__
 
-The MEDDOCAN corpus is distributed in plain text in UTF8 encoding, where each clinical case is stored as a single file, while PHI annotations are released in the popular BRAT format, which makes visualization of results straightforward. 
+*The MEDDOCAN corpus is distributed in plain text in UTF8 encoding, where each clinical case is stored as a single file, while PHI annotations are released in the popular BRAT format, which makes visualization of results straightforward.*
 
 __Dataset__
 
 Link: http://temu.bsc.es/meddocan/index.php/data/
 The data is provided in Brat and XML formats. For the purpose of this project, we are using the brat format.
 
-● Training: 500 clinical cases (released)
-● Development: 250 clinical case (scheduled release - April 4)
-● Test set with the background set is composed of at least 2,500 clinical case (scheduled release -
+Training: 500 clinical cases (released)
+Development: 250 clinical case (scheduled release - April 4)
+Test set with the background set is composed of at least 2,500 clinical case (scheduled release -
 April 29)
 
 Since the actual test data will be made available on April 29, for building our model and evaluation we have
