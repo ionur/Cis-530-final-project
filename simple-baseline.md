@@ -66,3 +66,12 @@ Total (156 docs)                   Precision      0.628
                                    F1             0.5061              
 ------------------------------------------------------------
 ```
+
+__How to run simple-baseline model:__
+
+```
+python simple-baseline.py --dataDir <Train/Dev/Test Data Directory>
+
+For instance:
+python simple-baseline.py --dataDir ./train/system
+```
