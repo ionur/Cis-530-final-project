@@ -1,0 +1,288 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \\documentclass[12pt]\{article\}\
+\\usepackage[\
+singlelinecheck=false % <-- important\
+]\{caption\}\
+\\usepackage[utf8]\{inputenc\}\
+\
+\\title\{Anonymize Sensitive Information in Medical Health Records\}\
+\\author\{ Bhavana Saluja , Gaurav , Srinivasa Sur, Ipek Onur  \}\
+\
+\\date\{April 2019\}\
+\
+\\usepackage[justification=centering, skip=0pt]\{caption\}\
+\\usepackage\{float\}\
+\\restylefloat\{table\}\
+\\restylefloat\{figure\}\
+\\usepackage\{natbib\}\
+\\usepackage\{graphicx\}\
+\\usepackage\{xcolor\}\
+\\usepackage\{lipsum\}\
+\\usepackage\{setspace\}\
+\\usepackage[margin=1in]\{geometry\}\
+\\usepackage[explicit]\{titlesec\}\
+\\titlespacing\\subsubsection\{2pt\}\{8pt plus 4pt minus 2pt\}\{0pt plus 2pt minus 2pt\}\
+\\begin\{document\}\
+\
+\
+\\maketitle\
+\
+\\section\{Introduction\}\
+\\subsection\{What is PHI?\}\
+As mentioned on the task page \\cite\{MainAuthor\} , Clinical records with protected health information (PHI) cannot be directly\
+shared \'93as is\'94, due to privacy constraints, making it particularly cumbersome to carry out NLP research in\
+the medical domain. A necessary precondition for accessing clinical records outside of hospitals is their\
+de-identification, i.e., the exhaustive removal, or replacement, of all mentioned PHI phrases.\
+\\par\
+What is PHI?\
+PHI stands for Protected Health Information and is any information in a medical record that can be used\
+to identify an individual, and that was created, used, or disclosed in the course of providing a health care\
+service, such as a diagnosis or treatment. In other words, PHI is personally identifiable information in\
+medical records, including conversations between doctors and nurses about treatment. PHI also includes\
+billing information and any patient-identifiable information in a health insurance company's computer\
+system.\
+Some information that can be considered PHI are Names, Surnames ,Addresses, Hospitals, Professions, Different types of locations (provinces, cities, towns,...), Billing information, Email, Phone records\
+\
+\\par\
+\\newline\
+\\subsection\{Tasks for this project\}\
+\\newline\
+1. Entity recognition on the data:\
+The goal is to match exactly the beginning and end locations of each PHI entity tag, as well as\
+detecting correctly the annotation type. After looking at training data, we see a good amount of\
+examples for this task.\
+\\newline\
+2. Detect sensitive spans:\
+The goal is to identify and be able to obfuscate or mask sensitive data, regardless the actual type\
+of entity or the correct offset identification of multi-token sensitive phrase mentions. This is a\
+comparatively difficult task because of lack of examples in training data.\
+\
+\\section\{Relevant Research\}\
+We have presented below the brief descriptions of the paper we have read. There are 5 papers in total and we have used the paper\\cite\{paper5\} for our baseline implementation.\
+\\subsection\{A Deep Learning Architecture for De-identification of Patient Notes: Implementation and Evaluation\\cite\{paper1\}\}\
+In this paper, the authors have presented a deep learning architecture that uses bi-directional long short-term memory networks (Bi-LSTMs) with variational dropouts and deep contextualized word embeddings while also using components such as traditional word embeddings (Glove),\
+character LSTM embeddings and conditional random fields. Their architecture can be broken down into four distinct layers: pre-processing, embeddings, Bi-LSTM and CRF classifier. In the pre-processing layer, they break down the input document into sentences, tokens, and characters. They then use NLTK to generate a part-of-speech (POS) tag for each token. In embedding layer, for each token they concatenate the GloVe (300 dimensions) and ELMo (1024 dimensions) representations to produce a single 1324-dimensional word input vector. The concatenated word vector is then further concatenated with the character embedding vector (50 dimensions), POS one-hot encoded vector (20 dimensions), and the casing embedded vector to produce single 1394-dimensional input vector that is fed to Bi-LSTM layer. Their Bi-LSTM layer consists of 100 hidden units, uses variational dropout and have a dropout probability of 0.5. Their approach in CRF layer is identical to the Bi-LSTM-CRF model by Huang et al (Z. Huang, W. Xu, and K. Yu, \'93Bidirectional lstm-crf models for sequence tagging,\'94 CoRR, 2015).\
+\\par\
+The two main data sets that they used to evaluate their architecture are the 2014 i2b2 de-identification challenge data set and the nursing notes corpus. On the task of binary F1 scores, their architecture performs similarly to the best scores achieved by other architectures with them having a slight edge on precision metrics. They have achieved precision of 0.9830, recall of 0.9737, and binary F1 score of 0.9783. For the nursing corpora, they managed to best the scores achieved by the deidentify system while also achieving a binary F1 score of over 0.812. For majority of HIPAA-PHI categories, their system performed better than system by Yang et al.\
+\
+\\subsection\{Anonymization of General Practioner Medical Records\\cite\{paper2\}\}\
+The paper aims to develop techniques and methods for semi-automated anonymization of medical record information. Some anonymization challenges, including linguistic issues (e.g. spelling and ambiguity) and determining which parts of the data that is sensitive are also discussed. The paper proposes methods like utilization of database structure, dictionaries, heuristics and natural language processing for anonymizing patient records in general. The dataset is in Norwegian language which means the task is even more challenging since it is different than English in terms of linguistic aspects. Major challenges which are posited are the differences in identity markers  (e.g. Dr. and Mrs.) and hyphenation patterns in Norwegian, unstructured text, no strictly enforced guidelines for how the data should be encoded. \
+\\par\
+The goal of this paper is to anonymize general practioner data - both structural and free-text. A 6-step anonymization approach is being proposed- \
+\\par\
+A. Dictionaries - Words and numbers found in structural data can  be extracted into local dictionaries with corresponding type (e.g. of patient names, social security numbers, postal codes, health institution names, health personnel names and locations). \
+\\par\
+B.  Exact Match and Tag - In this step, the focus is on processing the unigram created from the free-text notes. Based on all the local and external dictionaries, a combined dictionary is  created where one can look up words and get their corresponding type(s). In order to tag non-textual symbols such, e.g. dates, phone numbers and social security numbers, regular expressions are used.\
+\\par\
+C. Approximate Match and Tag - Patient records may contain erroneously spelled words, and in many cases they might be only slightly incorrectly spelled. Levenstein distance is used; by going through untagged words in the unigram and allowing an edit distance of 1, candidate misspellings can be found by relating them to the combined dictionary.\
+\\par\
+D1. Resolve Tagged Words - The words in the unigram should be replaced only if it is an identifying name (e.g. person name). When words have multiple type tags, they have to be replaced or removed if one or more of the tags are of the identifying type.\
+\\par\
+D2. Handle Untagged Words - Untagged words in the unigram needs to be investigated manually by the local clinician for tagging, the result of this investigation could be additional entries for the local or external dictionaries.\
+\\par\
+E. Final Result - The final result contains patient record text with identifying entities replaced by pseudonyms. In order to ensure an acceptable level of anonymization the result must be validated according to the requirements that motivated the anonymization in the first place. \
+\
+\\subsection\{State-of-the-art Anonymization of Medical Records Using an Iterative Machine Learning Framework\\cite\{paper3\}\}\
+The authors have developed a de-identification model that can successfully remove personal health information (PHI) from discharge records to make them conform to the guidelines of the HIPAA.\
+\\par\
+Feature set Built:\
+Authors have used feature set of 5 different categories described below:\
+Word level features: Word level features like Word Capitalization, punctuation marks, digits, Roman/Arabic numbers and other common word level feature of phone numbers, fax, age and ID\'92s etc \
+Frequency Information: Gathered frequency of tokens from the Internet. Used features like frequency of the token, the ratio of the token\'92s capitalized and lowercase occurrences, the ratio of capitalized and sentence beginning frequencies of the token.\
+Offline Dictionaries: 5 different dictionaries collected from the Internet.\
+Contextual Information: Sentence position, closest Heading to the section and several other features.\
+Phrasal Information: a forecasted class of several preceding words and common suffixes etc.	\
+\\par\
+Authors have trained 3 different classifiers that used 3 different contextual features and used a voting based mechanism to decide if the word belonged to N.E.R. If any 2 classifiers have predicted the same label, the word is assigned that tag otherwise it\'92s not considered NER.\
+\\par\
+Authors have used an iterative approach in the following way:\
+In the first iteration, they have collected several named entities from the headings and used these entities as an extra dictionary. They train the classifiers and collected all the texts tagged as entities from Step 1.\
+They used all the texts tagged as entities and added this dictionary set as an extra dictionary for step 2.\
+\
+\\subsection\{Anonymizing and Sharing Medical Text Records\\cite\{paper4\}\}\
+There are three categories in medical texts: (i)explicit identifiers (EID) which includes patient name, phone number, and social security number, which can be used to directly identify an individual (ii)quasi-identifier (QID) which includes date of birth, admission/discharge date, hospital, and zip code, (iii)Health and medical details (HMDs) such as symptoms, test results, disease, and medications.\
+\
+\\par\
+To extract these categories, a three step approach will be used.\
+Step 1: The feature extractor: It will split the document into terms. Each term will include local features such as term length, part-of-speech, etc; global features such as the position of the term in the document. (e.g., header, body text, heading, etc.); external features regarding such as whether the term belongs to a proper noun list, belongs to a medical concept lexicon, etc\
+\\par\
+Step 2: Base classifiers: Use multiple classifiers independent of each other from the features that are extracted. Goal of the classifiers are to match the terms to EID, QID, HMD, or irrelevant categories\
+\\par\
+Step 3: Combine the results of independent classifiers to get final tags of the words\
+\
+\
+\\section\{Dataset Description:\}\
+The data is provided in Brat and XML formats. Training: 500 clinical cases (released). Development: 250 clinical case (scheduled release - April 4) .Test set with the background set is composed of at least 2,500 clinical case (scheduled release -\
+April 29)\
+Since the actual test data will be made available on April 29, for building our model and evaluation we will\
+put 100 clinical cases aside each from the given training and development data.\
+New data distribution:\
+1. Training: 400 clinical cases\
+2. Development: 150 clinical cases\
+3. Testing: 200 clinical cases\
+\
+Challenges and motivation:\
+1. Most of the research in medical domain is currently being done for English text, so doing the\
+same for a low-resource language will be challenging but much needed.\
+2. The need to share medical records is there to carry out research in the medical domain, so\
+developing a system to automatically anonymize medical records will be of great help\
+Note: We went through the task page and also discussed the project idea with few PhD fellows. We\
+found it interesting as well as challenging and would like to take it up as our project for the class.\
+Link to the dataset is found here \\cite\{DatasetLink\}.\
+\
+\\subsection\{Data Cleaning\}\
+\
+\\section\{Extension  1\}\
+For our extension 1, we have extended the model submitted for Milestone 3. For Milestone 3 , we have trained a SVM with the following features:0. word \
+1. Word length \
+2. Whether word contains 1 digit \
+3. Whether word contains 2 digits \
+4. Whether word contains 3 digits \
+5. Whether word contains 5 digits \
+6. Whether word contains 6 digits \
+7. Whether word contains 7 digits \
+8. Whether word contains 9 digits \
+9. Whether there\'92s an uppercase letter \
+10. Whether the word contains punctuations \
+11. Whether the word is Roman \
+12. Whether the word contains \'91edad\'92 or \'91a\'f1os\'92 \
+13. Whether word is all uppercase \
+14. Whether word is all lowercase \
+15. Whether an apostrophe is present in the word \
+16. Whether a dash is present in the word \
+17. Whether the word contains \'91fax\'92 \
+\\newline\
+We have added the extension 1 in two phases. In the first phase, we have added dictionary lookup features.In the second phase, we have added regex features on top of phase 1.\
+\
+\\subsection\{Word level features + Dictionary lookup features\}\
+As an extension of Milestone 3, we have added dictionary level features for Milestone4. Milestone 3 had word level features and Milestone 4 classifiers are trained on word level features + dictionary lookup features.\
+We have taken two dictionaries to built the feature set. Our first dictionary\\cite\{dict1\} is a dictionary of spanish names along with their mean age and frequency. Our second dictionary is a list of spanish location names\\cite\{dict2\} taken from wikipedia. Thereby, we have added dictionary level features to our feature set. Using the two dictionaries mentioned here, we have added the following features on top of the features already mentioned.\
+18. Is word a Male Name?\
+19. Male Avg. Age\
+20. Male Name Avg. Frequency\
+21. Is word a Female Name?\
+22. Female Name Avg. Age\
+23. Female Name Avg. Frequency\
+24. Is Word a location?\
+\\subsection\{Results:\}\
+We have trained various classifiers on the train/dev/test results and the results for the training data are presented in  the table ~\\ref\{ext1train1\}, the results for the validation set are presented in the table  ~\\ref\{ext1dev1\} and the results for the test set are presented in the table  ~\\ref\{ext1test1\}.\
+\\subsection\{Word level features + Dictionary lookup features + regex features\}\
+TODO: ILAYDA: Add the regex features and their analysis.\
+\\subsubsection\{Results:\}\
+\
+\\section\{Extension 2\}\
+\\section\{Analysis\}\
+\
+\\begin \{table\}[H]\
+\
+\\begin\{center\}\
+\\begin\{tabular\}\{ |c|c|c|c| \} \
+ \\hline\
+Classifier  & Precision &  Recall &  F1Score  \\\\ \
+ \\hline\
+LinearSVC(C=1) & .979 & .941 & \\textbf\{.959\} \\\\\
+\\hline\
+Perceptron(alpha=0.0001) & .661 & .669 & .665  \\\\\
+\\hline\
+PassiveAggressiveClassifier() & .840 & .725 & .779  \\\\ \
+\\hline\
+DecisionTreeClassifier() & .984 & .944 & .964  \\\\ \
+\\hline\
+RandomForestClasifier() & .978 & .936 & .956 \\\\ \
+\\hline\
+LogisticRegression() & .911 & .838 & .873  \\\\ \
+\\hline\
+RandomForestClassifier(n_estimators=25) & .984 & .941  & .962 \\\\ \
+\\hline\
+LinearSVC(C=0.0001) & .702 & .382 & .495 \\\\ \
+\\hline\
+LinearSVC(C=10) & .975 & .942 & .958  \\\\ \
+\\hline\
+\\end\{tabular\}\
+\\caption\{Word level Features + Dictionary Lookup features on Train Data\} \\label\{ext1train1\}\
+\\end\{center\}\
+\\end\{table\}\
+\\vspace\{-2em\}\
+\
+\
+\\begin \{table\}[H]\
+\
+\\begin\{center\}\
+\\begin\{tabular\}\{ |c|c|c|c| \} \
+ \\hline\
+Classifier  & Precision &  Recall &  F1Score  \\\\ \
+ \\hline\
+LinearSVC(C=1) & .886 & .824 & \\textbf\{.854\} \\\\\
+\\hline\
+Perceptron(alpha=0.0001) & .650 & .643 & .646  \\\\\
+\\hline\
+PassiveAggressiveClassifier() & .832 & .696 & .758  \\\\ \
+\\hline\
+DecisionTreeClassifier() & .836 & .787 & .811  \\\\ \
+\\hline\
+RandomForestClasifier() & .870 & .792 & .829 \\\\ \
+\\hline\
+LogisticRegression() & .877 & .782 & .827  \\\\ \
+\\hline\
+RandomForestClassifier(n_estimators=25) & .886 & .796  & .838 \\\\ \
+\\hline\
+LinearSVC(C=0.0001) & .705 & .371 & .486 \\\\ \
+\\hline\
+LinearSVC(C=10) & .877 & .828 & .852  \\\\ \
+\\hline\
+\\end\{tabular\}\
+\\caption\{Word level Features + Dictionary Lookup features on Validation Data\} \\label\{ext1dev1\}\
+\\end\{center\}\
+\\end\{table\}\
+\\vspace\{-2em\}\
+\\begin \{table\}[H]\
+\
+\\begin\{center\}\
+\\begin\{tabular\}\{ |c|c|c|c| \} \
+ \\hline\
+Classifier  & Precision &  Recall &  F1Score  \\\\ \
+ \\hline\
+LinearSVC(C=1) & .889 & .837 & \\textbf\{.862\} \\\\\
+\\hline\
+Perceptron(alpha=0.0001) & .643 & .663 & .653  \\\\\
+\\hline\
+PassiveAggressiveClassifier() & .829 & .710 & .765  \\\\ \
+\\hline\
+DecisionTreeClassifier() & .835 & .785 & .809  \\\\ \
+\\hline\
+RandomForestClasifier() & .879 & .803 & .839 \\\\ \
+\\hline\
+LogisticRegression() & .874 & .788 & .829  \\\\ \
+\\hline\
+RandomForestClassifier(n_estimators=25) & .888 & .802  & .843 \\\\ \
+\\hline\
+LinearSVC(C=0.0001) & .701 & .370 & .485 \\\\ \
+\\hline\
+LinearSVC(C=10) & .871 & .833 & .852  \\\\ \
+\\hline\
+\\end\{tabular\}\
+\\caption\{Word level Features + Dictionary Lookup features on Test Data\} \\label\{ext1test1\}\
+\\end\{center\}\
+\\end\{table\}\
+\\vspace\{-2em\}\
+\
+\
+\\subsection\{Error Analysis\}\
+\
+\
+\\section\{Recommendations and future work\}\
+\
+\
+\\section\{Conclusion\}\
+\
+\
+\\bibliographystyle\{plain\}\
+\\bibliography\{references\}\
+\\end\{document\}\
+}
