@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
@@ -32,6 +32,7 @@ singlelinecheck=false % <-- important\
 \
 \
 \\maketitle\
+\\section\{Abstract\}\
 \
 \\section\{Introduction\}\
 \\subsection\{What is PHI?\}\
@@ -51,7 +52,7 @@ Some information that can be considered PHI are Names, Surnames ,Addresses, Hosp
 \
 \\par\
 \\newline\
-\\subsection\{Tasks for this project\}\
+\\subsection\{Formal definition:\}\
 \\newline\
 1. Entity recognition on the data:\
 The goal is to match exactly the beginning and end locations of each PHI entity tag, as well as\
@@ -62,8 +63,18 @@ examples for this task.\
 The goal is to identify and be able to obfuscate or mask sensitive data, regardless the actual type\
 of entity or the correct offset identification of multi-token sensitive phrase mentions. This is a\
 comparatively difficult task because of lack of examples in training data.\
+\\subsection\{An example of the task:\}\
+In this section, we have defined a figure[\\ref\{fig:masking\}] that shows an example of such a task. In the figure[\\ref\{fig:masking\}], we can see that the sensitive data like Name, Hospital Name and SSN Id are intially visible and are masked after applying any approach that masks sensitive data. Formally, A NLP approach identified all the sensitive tags using NER approach or deep nets or n-gram models and so on ... It identified such words and masked them before releasing it to researchers.\
 \
-\\section\{Relevant Research\}\
+\\begin\{figure\}\
+\\includegraphics[width=0.9\\textwidth]\{IMG_5977.JPG\}\
+\\caption\{A prototype of the Job Information dialog\}\
+\\label\{fig:masking\}\
+\\end\{figure\}\
+\
+\
+\\subsection\{Why we choose this topic:\}\
+\\section\{Literature Review\}\
 We have presented below the brief descriptions of the paper we have read. There are 5 papers in total and we have used the paper\\cite\{paper5\} for our baseline implementation.\
 \\subsection\{A Deep Learning Architecture for De-identification of Patient Notes: Implementation and Evaluation\\cite\{paper1\}\}\
 In this paper, the authors have presented a deep learning architecture that uses bi-directional long short-term memory networks (Bi-LSTMs) with variational dropouts and deep contextualized word embeddings while also using components such as traditional word embeddings (Glove),\
@@ -117,7 +128,8 @@ Step 2: Base classifiers: Use multiple classifiers independent of each other fro
 Step 3: Combine the results of independent classifiers to get final tags of the words\
 \
 \
-\\section\{Dataset Description:\}\
+\\section\{Experimental Design:\}\
+\\subsection\{Dataset Description:\}\
 The data is provided in Brat and XML formats. Training: 500 clinical cases (released). Development: 250 clinical case (scheduled release - April 4) .Test set with the background set is composed of at least 2,500 clinical case (scheduled release -\
 April 29)\
 Since the actual test data will be made available on April 29, for building our model and evaluation we will\
@@ -136,8 +148,139 @@ Note: We went through the task page and also discussed the project idea with few
 found it interesting as well as challenging and would like to take it up as our project for the class.\
 Link to the dataset is found here \\cite\{DatasetLink\}.\
 \
-\\subsection\{Data Cleaning\}\
+\\subsection\{Evaluation Metric:\}\
 \
+1. Entity recognition on the data:\
+For this task evaluation will be entity-based. This task will require to compare the system output\
+with the beginning and end locations of each PHI entity tag, as well as detecting correctly the\
+annotation type.\
+\\par\
+2. Detect sensitive spans:\
+For this task evaluation will be span-based, by just evaluating whether spans belonging to\
+sensitive phrases are detected correctly. This boils down to a classification of spans, where\
+systems try to obfuscate spans that contain sensitive PHI expressions.\
+\\par\
+For both sub-tasks, the metric used will be micro-averaged precision, recall, and balanced F-score:\
+1. Precision (P) = true positives/(true positives + false positives)\
+2. Recall (R) = true positives/(true positives + false negatives)\
+3. F-score (F1) = 2*((P*R)/(P+R))\
+\\par\
+Higher F-scores are better for the above tasks.\
+\\par\
+Task 2 is a subsequent task after NER (Task 1). Task 2 can be taken up only after successful completion of Task 1.\
+\
+\
+\\subsection\{Simple Baseline:\}\
+\
+\\subsubsection\{Preprocessing the data:\}\
+\\par\
+Step 1 - Parse all the labels in the training data from all the files to identify (word,tag) tuples:\
+\
+Our dataset is in Spanish language. We use the labelled data of the training set to identify the (word,tag) tuples. For example, if one of the labels in the training set contains (Ernesto, \'92NOMBRE\\_SUJETO\\_ASISTENCIA\'92) as one of the gold standard label for a file, we add (Ernesto,\'92NOMBRE\\_SUJETO\\_ASISTENCIA\'92) to the dictionary D. We populate the dictionary D using the approach mentioned above for all the files.\
+\
+\\par\
+Step 2 - Parse the text from the training data from all the files to identify the list L of (identifier,word) tuples:\
+\
+We then parse all the files one by one for a second time. In each file, We search for all the keywords from the dictionary D. For each keyword found from the dictionary D, we search if \'91:\'92 is the character that appears before the keyword.If we find \'91:\'92 before the keyword, we label the word before \'91:\'92 as an Identifier.For example, if we find \'91Nombre: Ernesto\'92 in the running text, we add (\'91Nombre\'92) as an Identifier.  After the end of second pass of the text files, we get all the (Identifier,word)  tuples from all the files. From D, we have a mapping of (word,tag) and from the second pass of reading all the files, we have mappings of the form (Identifier, word). Using the transitive relation, we create a precomputed dictionary of ( Identifier, tag ). \
+\\par\
+Example:\
+\
+	Precomputed dictionary D looks something like:\
+	\{ 'Nombre': 'NOMBRE_SUJETO_ASISTENCIA', \'85\'85...\}\
+\
+	After reading all the files second time, We get, L = [ (\'91Nombre\'92,\'92Ernesto\'92 ),....] (\'91Nombre\'92,\'92Ernesto\'92 ) is one of the (Identifier,word) tuple from the List L.\
+\\par\
+Step 3 - Combine the tuples from Dictionary D and List L to generate (identifier,tag) tuples that forms the basis for our baseline model:\
+\
+We use combine Dictionary D and the list L to generate the (identifier,tag) tuples. For example,(\'91Nombre\'92,\'92Ernesto\'92 ) is one of the (Identifier,word) tuple. All such tuples are stored as a dictionary on the disk and these tuples form the basis of our baseline model.\
+\\par\
+Step 4 - Creating the tags for the baseline model:\
+\
+We use regex expressions to find the words of the form word1:word2 from the training/validation files. For each such tuples found, we see if the word1 is a key from the precomputed Dictionary D1. If it is a key from the Dictionary D1, we label the word2 with the tag corresponding to the word1 from Dictionary D1.  This simple baseline does not involve any machine learning. It relies on  two things 1. Finding the : separated words from the running text 2. Assigning the tag to the words using the precomputed Dictionary D1.\
+	\
+	\\par\
+	\\subsubsection\{Results for our baseline model:\}\
+\
+The results for the baseline model are presented in the table \\ref\{baseline\}\
+\
+\\begin \{table\}[H]\
+\
+\\begin\{center\}\
+\\begin\{tabular\}\{ |c|c|c|c| \} \
+ \\hline\
+Classifier  & Precision &  Recall &  F1Score  \\\\ \
+ \\hline\
+Training Set & .634 & ..438 & \\textbf\{.518\} \\\\\
+\\hline\
+Validation Set & .629 & .425 & .507  \\\\\
+\\hline\
+Test set & .628 & .432 & .506  \\\\ \
+\\hline\
+\\end\{tabular\}\
+\\caption\{Baseline Scores\} \\label\{baseline\}\
+\\end\{center\}\
+\\end\{table\}\
+\\vspace\{-2em\}\
+\
+\\section \{Published Baseline\}\
+\\par\
+We have built a baseline model simulating the kind of work implemented in the paper on \'91Identifying Personal Health Information Using Support Vector Machines\'92 \\cite\{paper5\}. Since our dataset is in Spanish which is a low-resource language, we couldn\'92t implement some features because of the scarcity of data for this particular locale. We intend to include more features based off of Spanish as an extension in Milestone 4. We have tried to gather as many token-level features as we could find for Spanish in this milestone. \
+\\par\
+Our feature set is as follows:\
+1. Word length \
+2. Whether word contains 1 digit \
+3. Whether word contains 2 digits \
+4. Whether word contains 3 digits \
+5. Whether word contains 5 digits \
+6. Whether word contains 6 digits \
+7. Whether word contains 7 digits \
+8. Whether word contains 9 digits \
+9. Whether there\'92s an uppercase letter \
+10. Whether the word contains punctuations \
+11. Whether the word is Roman \
+12. Whether the word contains \'91edad\'92 or \'91a\'f1os\'92 \
+13. Whether word is all uppercase \
+14. Whether word is all lowercase \
+15. Whether an apostrophe is present in the word \
+16. Whether a dash is present in the word \
+17. Whether the word contains \'91fax\'92 \
+\\par\
+\\par\
+For each word we look at the window [-1,0,1,2] and create feature vector including the features of these words in the context of the target word. \
+We have picked these particular features because: \uc0\u9679  Digits: \
+		
+\f1 \uc0\u9675 
+\f0  \'a0Spanish phone numbers contain 9 digits and their format varies. It may come in 3 3 3, 3-3-3, 9, 2 3 2 2, 3 2 2 2, 3 6, 2 7 \uc0\u8232 \
+		
+\f1 \uc0\u9675 
+\f0  \'a0That is why we created a feature to capture all these different formats \uc0\u8232 \
+		\uc0\u9679  \'a0Upper/Lower cases To extract words that are part of names or addresses \u8232 \
+		\uc0\u9679  \'a0Edad/Anos to get values associated with age \u8232 \
+\\newline\
+\uc0\u9679  To distinguish between phone and fax numbers Experiments with features: \
+We have a total of 401 training documents, 193 dev documents and 156 test documents and we tokenized the files into sentences who counts are mentioned as follows - \
+train sentences len equal to 8300 (Total (401 docs)) dev sentences len equal to 4048 (Total (193 docs)) test sentences len equal to 3231 (Total (156 docs)) .\
+\
+Our Model used is LinearSVC  and the results are presented in table[\\ref\{publishedpaper\}]. As we can see, we have achieved a significant improvement in results by adding these features. Our F1 score jumped to 86\\% after adding these new features. Although the authors achieved a score of 89\\% on their original paper. WE cannot compare our results with them as our data is in Spanish while there data is in English.\
+\
+\
+\\begin \{table\}[H]\
+\
+\\begin\{center\}\
+\\begin\{tabular\}\{ |c|c|c|c| \} \
+ \\hline\
+Classifier  & Precision &  Recall &  F1Score  \\\\ \
+ \\hline\
+Baseline & .628 & .423 & .506 \\\\\
+\\hline\
+LinearSVC & .891 & .833 & .861  \\\\\
+\
+\\hline\
+\\end\{tabular\}\
+\\caption\{Baseline Scores\} \\label\{publishedpaper\}\
+\\end\{center\}\
+\\end\{table\}\
+\\vspace\{-2em\}\
 \\section\{Extension  1\}\
 For our extension 1, we have extended the model submitted for Milestone 3. For Milestone 3 , we have trained a SVM with the following features:0. word \
 1. Word length \
@@ -272,8 +415,6 @@ LinearSVC(C=10) & .871 & .833 & .852  \\\\ \
 \\end\{table\}\
 \\vspace\{-2em\}\
 \
-\
-\\subsection\{Error Analysis\}\
 \
 \
 \\section\{Recommendations and future work\}\
