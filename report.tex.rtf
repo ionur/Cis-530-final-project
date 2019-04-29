@@ -12,7 +12,7 @@ singlelinecheck=false % <-- important\
 \\usepackage[utf8]\{inputenc\}\
 \
 \\title\{Anonymize Sensitive Information in Medical Health Records\}\
-\\author\{ Bhavana Saluja , Gaurav , Srinivasa Sur, Ipek Onur  \}\
+\\author\{ Bhavana Saluja , Gaurav , Srinivasa Suri, Ipek Onur  \}\
 \
 \\date\{April 2019\}\
 \
@@ -127,6 +127,25 @@ Step 2: Base classifiers: Use multiple classifiers independent of each other fro
 \\par\
 Step 3: Combine the results of independent classifiers to get final tags of the words\
 \
+\\subsection\{Identifying Personal Health Using Support Vector Machines\\cite\{paper5\}\}\
+The authors have developed a SVM model that can successfully remove personal health information (PHI) from discharge records to make them conform to the guidelines of the HIPAA.\
+\\par\
+The authors have experimented using SVM\'92s to recognise NER data. Authors have built feature set using various features and trained svm on them. They have used token level features like orthographic features, length, pos, kind etc. Additionally, they have used features like date, id, phone number etc. They have used ANNIE Web API to identify hospitals, people or locations etc. The dataset of this paper\'92s are in english and our dataset is in Spanish. Therefore, we cannot use ANNIE directly as the language is different. However, we have implemented phone number feature. We are tokenizing date as is a number column and there are no ID\'92s in our dataset. Therefore, we could not copy the features as it from the paper, however we tried to reciprocate the features as much as we could trying to mimic the paper.\
+\\par\
+Authors have trained their dataset on SVM. However, they have not mentioned about their default parameters. SVM kernel runs in \\begin\{math\} O(n^2) \\end\{math\} where n is the number of rows because of the kernel matrix computation. We used LinearSVC() which scales in linear time. This provides with several advantages over the linear SVM. First of all, it provides us an opportunity to scale the feature set for future milestones. Second, we haven\'92t deviated from using the svm as linear svc is very similar to linear svm without computing the kernel matrix and it runs in linear time optimization.\
+\\par\
+Authors have achieved a F1-Score of 96\\%. However, since their dataset is different, it\'92s difficult to compare their F-Scores with ours. \
+\\par\
+We have chosen paper 5 for implementation. There are several reasons why we went ahead with paper 5:\
+\\begin\{itemize\}\
+\\item\{From an NLP perspective, this paper forms a very good baseline paper to understand how researchers approach the problem of NER for PHI. As the feature set isn\'92t exhaustive like some other papers, where they had almost 140 features! This paper has the practicality to be implemented for this project.\}\
+\
+\\item\{They have achieved an f-score of 96\\%. Although their data was in english, their implementation looks promising because of their results.\}\
+\
+\\item\{They have also used non machine learning features like ANNIE, JAPE grammar rules etc. which broaden our scope of implementation and experimentation. While implementing these features for Spanish language doesn\'92t make sense, this paper forms our inspiration and provided us with a roadmap of using Spanish name dictionaries, Spanish location dictionaries for future extensions.\}\
+\
+\\item\{There were few papers which didn\'92t implement any machine learning at all. This paper used SVM for their implementation. This provides us with a way to extend our MS3 implementation for the next milestone by implementing more features or other type of classifiers like Neural Nets/LSTMs etc.\}\
+\\end\{itemize\}\
 \
 \\section\{Experimental Design:\}\
 \\subsection\{Dataset Description:\}\
@@ -186,7 +205,7 @@ We then parse all the files one by one for a second time. In each file, We searc
 Example:\
 \
 	Precomputed dictionary D looks something like:\
-	\{ 'Nombre': 'NOMBRE_SUJETO_ASISTENCIA', \'85\'85...\}\
+	\{ 'Nombre': 'NOMBRE\\_SUJETO\\_ASISTENCIA', \'85\'85...\}\
 \
 	After reading all the files second time, We get, L = [ (\'91Nombre\'92,\'92Ernesto\'92 ),....] (\'91Nombre\'92,\'92Ernesto\'92 ) is one of the (Identifier,word) tuple from the List L.\
 \\par\
