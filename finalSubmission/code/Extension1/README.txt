@@ -1,6 +1,7 @@
 In order to see the performance of Extension1:
 
-Run milestone_4_ext1.py
+Run 
+  python milestone_4_ext1.py
 
 For evaluation:
 Evaluation will use the script under the code directory.
