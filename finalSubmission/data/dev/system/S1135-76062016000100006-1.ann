@@ -1,0 +1,21 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 29 38	Francisco
+T2	NOMBRE_SUJETO_ASISTENCIA 51 66	Ruano Gutierrez
+T3	ID_SUJETO_ASISTENCIA 73 80	8245956
+T4	ID_ASEGURAMIENTO 89 103	79 58768954 02
+T5	CALLE 116 144	C/ Sainz de Baranda, 19, 5 G
+T6	TERRITORIO 168 174	Madrid
+T7	TERRITORIO 180 185	28031
+T8	FECHAS 229 239	21/08/1987
+T9	PAIS 261 267	España
+T10	EDAD_SUJETO_ASISTENCIA 275 282	30 años
+T11	SEXO_SUJETO_ASISTENCIA 289 290	H
+T12	FECHAS 310 320	19/11/2017
+T13	NOMBRE_PERSONAL_SANITARIO 330 359	María Sandra Alfageme Redondo
+T14	ID_TITULACION_PERSONAL_SANITARIO 367 369	28
+T15	SEXO_SUJETO_ASISTENCIA 421 426	varón
+T16	EDAD_SUJETO_ASISTENCIA 443 568	30 años de edad, con antecedentes personales de bajo rendimiento escolar y patrón de crianza tipo sobreprotector. Relación de
+T17	FAMILIARES_SUJETO_ASISTENCIA 614 618	hija
+T18	FAMILIARES_SUJETO_ASISTENCIA 1242 4573	hija; la dejó en la puerta de su casa, con amenazas de poder localizarla en caso de contar lo sucedido. Tras aproximadamente una semana, volvió a repetir la misma secuencia, si bien en esta ocasión la víctima intentó huir del coche, provocándose lesiones al ser sujetada por el peritado. Ambas agresiones sexuales coinciden con un período de deterioro de la relación de pareja que mantenía, y en la segunda de ellas existía el antecedente claro de frustración relacionada con el incumplimiento de las expectativas de mantener una relación sexual con una desconocida con la que mantenía relación telefónica, y hacia la que el peritado albergaba sentimientos de incipiente enamoramiento.
+T19	FAMILIARES_SUJETO_ASISTENCIA 4896 4983	hijos, sin participación activa en las decisiones derivadas de la convivencia en pareja
+T20	NOMBRE_PERSONAL_SANITARIO 5517 5546	María Sandra Alfageme Redondo
+T21	CORREO_ELECTRONICO 5555 5591	marias.alfageme@ juntadeandalucia.es

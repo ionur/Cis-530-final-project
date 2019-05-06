@@ -1,0 +1,15 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 28 33	Carla
+T2	NOMBRE_SUJETO_ASISTENCIA 46 59	Jarquin Rivas
+T3	ID_SUJETO_ASISTENCIA 66 73	4879563
+T4	ID_ASEGURAMIENTO 81 95	72 36470814 15
+T5	CALLE 108 129	C/ Ontiveros, 19, 4 D
+T6	TERRITORIO 153 159	Madrid
+T7	TERRITORIO 165 170	28019
+T8	FECHAS 214 224	03/11/1981
+T9	PAIS 246 252	España
+T10	EDAD_SUJETO_ASISTENCIA 260 267	28 años
+T11	SEXO_SUJETO_ASISTENCIA 274 341	M.
+T12	ID_TITULACION_PERSONAL_SANITARIO 350 361	28 28 65589
+T13	SEXO_SUJETO_ASISTENCIA 402 407	varón
+T14	EDAD_SUJETO_ASISTENCIA 412 3698	28 años de edad, visto en consulta de urología por presentar varicocele izquierdo. En el estudio de dicha patología se descubrió una gran masa dependiente de riñón izquierdo, que desplazaba las estructuras abdominales; se observaron la vena renal izquierda y cava desplazadas, pero permeables. Clínicamente, el paciente refería dolor abdominal, astenia y pérdida de peso. No presentaba hematuria ni síndrome miccional. A la exploración física, se palpaba una gran masa abdominal.
+T15	CORREO_ELECTRONICO 3719 3740	ndelvallegon@yahoo.es

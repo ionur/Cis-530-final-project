@@ -1,0 +1,24 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 9 22	Andres Manuel
+T2	NOMBRE_SUJETO_ASISTENCIA 35 48	López Obrador
+T3	TERRITORIO 55 60	87913
+T4	ID_ASEGURAMIENTO 68 82	76 01345609 43
+T5	CALLE 95 124	Av. de la Constitución, 18 9D
+T6	TERRITORIO 147 154	Granada
+T7	TERRITORIO 160 165	18012
+T8	FECHAS 209 219	24/12/1958
+T9	PAIS 227 233	España
+T10	EDAD_SUJETO_ASISTENCIA 241 248	59 años
+T11	SEXO_SUJETO_ASISTENCIA 255 256	H
+T12	NOMBRE_PERSONAL_SANITARIO 295 315	David Márquez Medina
+T13	ID_TITULACION_PERSONAL_SANITARIO 324 335	18 18 69453
+T14	SEXO_SUJETO_ASISTENCIA 356 361	varón
+T15	EDAD_SUJETO_ASISTENCIA 365 610	59 años que consulta por un cuadro de déficit intelectual, convulsiones, bradipsiquia, desorientación y estupor en los días previos. 
+T16	FECHAS 908 2277	Diciembre del 2000. La anatomía patológica fue informada como osteosarcoma meníngeo (Macroscopía: Masa de 5'2x4'5 cms parcialmente calcificada. Microscopía: Tumor osteogénico bien delimitado, sin infiltración del parénquima. Trabéculas óseas irregulares conteniendo áreas atípicas, áreas bien diferenciadas con células osteoclásticas, necrosis y hemorragia).
+T17	FECHAS 2361 2374	Mayo del 2003
+T18	HOSPITAL 2474 2504	Hospital Carlos Haya de Málaga
+T19	FECHAS 2534 2985	11-05-2003, refiriendo déficit intelectual e incontinencia urinaria, se le realizó una nueva RNMC que mostraba un proceso expansivo frontoparietal, extendido al lóbulo frontal derecho y al cuerpo calloso, y una TAC torácica que apreciaba múltiples nódulos metastásicos en ambos pulmones. Se descartó tratamiento con cirugía, QT y RT, y se administraron corticoides a altas dosis, consiguiendo una mejoría inicial.
+T20	NOMBRE_PERSONAL_SANITARIO 3427 3440	David Márquez
+T21	HOSPITAL 3508 3561	Hospital Clínico Universitario San Cecilio de Granada
+T22	CALLE 3562 3582	Avda. Doctor Olóriz,
+T23	TERRITORIO 3594 3601	Granada
+T24	CORREO_ELECTRONICO 3610 3629	dmarmed@hotmail.com

@@ -1,0 +1,23 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 9 14	Paula
+T2	NOMBRE_SUJETO_ASISTENCIA 27 39	VIdal Miguel
+T3	ID_SUJETO_ASISTENCIA 46 53	5637828
+T4	ID_ASEGURAMIENTO 61 75	47 47182936 46
+T5	CALLE 88 110	Av. embajadores 23, 5D
+T6	TERRITORIO 134 140	Madrid
+T7	TERRITORIO 146 151	28001
+T8	FECHAS 195 205	05/03/1946
+T9	PAIS 213 219	España
+T10	EDAD_SUJETO_ASISTENCIA 227 234	70 años
+T11	SEXO_SUJETO_ASISTENCIA 241 242	M
+T12	FECHAS 262 272	28/09/2016
+T13	ID_CONTACTO_ASISTENCIAL 312 320	85634542
+T14	NOMBRE_PERSONAL_SANITARIO 330 355	Ignacio Aníbal Capdevilla
+T15	SEXO_SUJETO_ASISTENCIA 397 402	mujer
+T16	EDAD_SUJETO_ASISTENCIA 406 1325	70 años, acudió a urgencias de otro hospital por un dolor intenso en labio inferior acompañado de tumefacción y edema en labio, mentón y zona submandibular que le había despertado repentinamente por la noche. Se trató inicialmente con corticoides iv y analgesia, y se remitió a su domicilio. Cuatro días más tarde, la paciente llegó a urgencias de nuestro hospital al describir que la lesión se le había vuelto «negruzca y amarillenta». La lesión no era dolorosa ni presentaba fiebre ni otros síntomas acompañantes. En el interrogatorio la paciente refirió haber visto arañas recientemente en su vivienda. Este cuadro se contextualizaba en una epidemia de picaduras por la araña Loxosceles reclusa en la misma zona geográfica. En los 15 días previos se habían diagnosticado 7 casos de picaduras en miembros superiores e inferiores en urgencias.
+T17	FAMILIARES_SUJETO_ASISTENCIA 1331 1342	dos abuelas
+T18	NOMBRE_SUJETO_ASISTENCIA 1346 1351	Paula
+T19	NOMBRE_PERSONAL_SANITARIO 2708 2733	Ignacio Aníbal Capdevilla
+T20	HOSPITAL 2764 2799	Hospital Nuestra Señora del Rosario
+T21	TERRITORIO 2800 2806	Madrid
+T22	PAIS 2808 2814	España
+T23	CORREO_ELECTRONICO 2815 2836	igcapdevila@gmail.com

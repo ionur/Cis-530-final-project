@@ -1,0 +1,17 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 9 13	Rosa
+T2	NOMBRE_SUJETO_ASISTENCIA 26 40	Medina Narvaez
+T3	TERRITORIO 47 52	34895
+T4	ID_ASEGURAMIENTO 60 74	07 82356475 36
+T5	CALLE 87 111	Calle Muñoz León, 13, 1C
+T6	TERRITORIO 135 142	Sevilla
+T7	TERRITORIO 148 153	41009
+T8	FECHAS 197 207	15/03/1948
+T9	PAIS 215 221	España
+T10	EDAD_SUJETO_ASISTENCIA 229 236	68 años
+T11	SEXO_SUJETO_ASISTENCIA 243 244	M
+T12	FECHAS 264 274	24/03/2016
+T13	NOMBRE_PERSONAL_SANITARIO 284 307	Alejandro Liñán Padilla
+T14	ID_TITULACION_PERSONAL_SANITARIO 316 327	41 41 26458
+T15	SEXO_SUJETO_ASISTENCIA 346 351	Mujer
+T16	EDAD_SUJETO_ASISTENCIA 355 1402	68 años, estudiada dos años atrás en consultas de digestivo por una disfagia moderada a sólidos, sin otra sintomatología acompañante, se realiza endoscopia digestiva alta con hallazgo de una hernia de hiato, recomendándose tratamiento con inhibidores de la bomba de protones, con mejora considerable de los síntomas. Posteriormente y durante el periodo de revisión en consultas, presenta un cuadro de dolor epigástrico intenso de unos meses de evolución, por lo que se repite una segunda endoscopia en la que se evidencia una lesión a nivel de tercio medio de esófago, biopsiada e informada como carcinoma de célula pequeña tipo “oat-cell” ulcerado e infiltrante. Ante estos hallazgos, se procede a completar estudios en la paciente realizándose distintas exploraciones con el objetivo fundamental de encontrar el tumor primario (pensando en un origen pulmonar dado la especie histológica de la neoplasia) y estadiar la enfermedad.
+T17	NOMBRE_PERSONAL_SANITARIO 3583 3692	Alejandro Liñán Padilla. C/Antonio Filpo Rojas, 14 1º izda. 41008 Sevilla E-mail: linan_alejandro@hotmail.com

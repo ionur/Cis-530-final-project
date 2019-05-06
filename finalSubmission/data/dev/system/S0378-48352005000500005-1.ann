@@ -1,0 +1,21 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 28 35	Ignacio
+T2	NOMBRE_SUJETO_ASISTENCIA 49 63	Iglesias Garay
+T3	ID_SUJETO_ASISTENCIA 70 77	8975674
+T4	ID_ASEGURAMIENTO 85 99	57 14365706 31
+T5	CALLE 112 140	C/ Virgen de la Cabeza, 62,3
+T6	TERRITORIO 166 173	Granada
+T7	TERRITORIO 179 184	18014
+T8	FECHAS 228 238	07/09/1995
+T9	PAIS 260 266	España
+T10	EDAD_SUJETO_ASISTENCIA 274 281	20 años
+T11	SEXO_SUJETO_ASISTENCIA 288 289	H
+T12	FECHAS 309 319	16/06/2016
+T13	NOMBRE_PERSONAL_SANITARIO 329 350	Carmen Miguel Cabrera
+T14	ID_TITULACION_PERSONAL_SANITARIO 358 369	18 18 54789
+T15	EDAD_SUJETO_ASISTENCIA 413 1469	20 años de edad que acude a urgencias, con dolor lumbar y fiebre. Al paciente se le realizan urocultivos, hemocultivos, y estudio de marcadores tumorales (pruebas que resultan negativas), por tomografía axial computerizada (TAC) se le detecta una masa tumoral que afecta al polo superior del riñón derecho. Tras lo cual se realiza la resección quirúrgica del tumor.
+T16	NOMBRE_PERSONAL_SANITARIO 1843 1879	Dual Color Break Apart Rearrangement
+T17	NOMBRE_PERSONAL_SANITARIO 2939 2960	Carmen Miguel Cabrera
+T18	HOSPITAL 2961 3004	Hospital Universitario Virgen de las Nieves
+T19	INSTITUCION 3037 3062	Edificio de Gobierno - 4ª
+T20	CALLE 3070 3085	Avenida Fuerzas
+T21	CORREO_ELECTRONICO 3121 3144	mcabrm@fundacionhvn.org

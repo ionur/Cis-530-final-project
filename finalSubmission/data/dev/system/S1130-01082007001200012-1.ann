@@ -1,0 +1,19 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 9 14	Cesar
+T2	NOMBRE_SUJETO_ASISTENCIA 27 40	Prego Quezada
+T3	ID_SUJETO_ASISTENCIA 47 53	047856
+T4	ID_ASEGURAMIENTO 61 75	90 82560375 60
+T5	CALLE 88 104	Av. Fisterra, 72
+T6	TERRITORIO 129 137	A Coruña
+T7	FECHAS 191 201	26/02/1978
+T8	PAIS 209 215	España
+T9	EDAD_SUJETO_ASISTENCIA 223 230	40 años
+T10	SEXO_SUJETO_ASISTENCIA 237 238	H
+T11	FECHAS 258 268	05/05/2018
+T12	NOMBRE_PERSONAL_SANITARIO 299 322	Ignacio Rodríguez Gómez
+T13	ID_TITULACION_PERSONAL_SANITARIO 331 342	15 28 45632
+T14	EDAD_SUJETO_ASISTENCIA 373 1834	40 años que acude a consultas externas del Servicio de Digestivo para estudio de una elevación de las transaminasas en un análisis de sangre realizado de forma rutinaria. En el estudio ecográfico abdominal se detectó una LOE en los segmentos 2 y 3 del hígado de 4 cm de tamaño máximo, de características sólidas compatible con el diagnóstico de hepatoma. En la tomografía axial computadorizada (TAC) abdominal multicorte se apreció en los segmentos 2 y 3 una lesión focal de bordes lobulados que medía 4 cm de diámetro, que realzaba de forma intensa tras la inyección de contraste intravenoso en fase arterial; y con lavado en fase portal, hallazgos compatibles con el diagnóstico de hepatocarcinoma. No evidencia de otras lesiones focales. La vía biliar intrahepática no se encontraba dilatada y la vesícula biliar no presentaba imágenes litiásicas.
+T15	NOMBRE_PERSONAL_SANITARIO 2600 2623	Ignacio Rodríguez Gómez
+T16	HOSPITAL 2624 2685	Complejo Hospitalario Universitario Juan Canalejo. As Xubias,
+T17	TERRITORIO 2690 2699	La Coruña
+T18	PAIS 2702 2708	España
+T19	CORREO_ELECTRONICO 2710 2730	urogomez@hotmail.com

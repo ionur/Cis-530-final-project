@@ -1,0 +1,17 @@
+T1	NOMBRE_SUJETO_ASISTENCIA 29 36	Mariano
+T2	NOMBRE_SUJETO_ASISTENCIA 49 59	Ramos Baez
+T3	ID_SUJETO_ASISTENCIA 66 73	2594890
+T4	ID_ASEGURAMIENTO 81 95	47 39047534 02
+T5	CALLE 108 111	Av.
+T6	NOMBRE_PERSONAL_SANITARIO 112 127	Pedro Rubio, 36
+T7	TERRITORIO 151 157	Madrid
+T8	TERRITORIO 163 168	28319
+T9	FECHAS 212 222	13/09/1955
+T10	PAIS 230 236	España
+T11	EDAD_SUJETO_ASISTENCIA 244 251	62 años
+T12	SEXO_SUJETO_ASISTENCIA 258 259	H
+T13	FECHAS 279 289	23/07/2017
+T14	ID_TITULACION_PERSONAL_SANITARIO 307 309	28
+T15	EDAD_SUJETO_ASISTENCIA 356 1860	62 años de edad,consulta por presentar dolor en hemiescroto derecho de tres meses de evolución, al examen físico se constata varicocele derecho grado IV, palpándose además voluminosa masa a nivel del área renal derecha. Se realiza ecografía abdominal que informa masa heterogénea de 10 cm. aproximadamente en riñón derecho, riñón izquierdo sin hallazgos patológicos. Se complementa con tomografía axial computada de abdomen y pelvis con contraste endovenoso donde se evidencia una formación renal derecha heterogénea de 110 x 120 mm de diámetro, no se observan adenomegalias retroperitoneales. Difícil evaluación del pedículo renal derecho.
+T16	NOMBRE_PERSONAL_SANITARIO 2277 2300	Rodrigo Martínez Mansur
+T17	CORREO_ELECTRONICO 2309 2330	drrmmmansur@yahoo.com
