@@ -14,3 +14,12 @@ Go to code/
   
 3)Test evaluation:
   python evaluate.py brat ner ../data/test/gold ../output/test/system
+
+  Report (SYSTEM: system):
+  ------------------------------------------------------------
+  SubTrack 1 [NER]                   Measure        Micro               
+  ------------------------------------------------------------
+  Total (156 docs)                   Precision      0.8951              
+                                     Recall         0.8285              
+                                     F1             0.8606              
+  ------------------------------------------------------------
